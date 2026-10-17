@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>잔향 殘響 · ECHO — 말이 떨어진 세계</title>
+<meta name="description" content="2031년, 하늘 위에 쌓여 있던 인류의 모든 말이 쏟아졌다. 매일 이어지는 세계관 연대기 「잔향」.">
+<meta property="og:title" content="잔향 殘響 · ECHO">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<header class="nav">
+  <a class="brand" href="#top">殘響</a>
+  <button class="burger" aria-label="메뉴" onclick="document.body.classList.toggle('menu')">☰</button>
+  <nav>
+    <a href="#lore">세계</a><a href="#map">지도</a><a href="#factions">세력</a><a href="#characters">인물</a><a href="#chronicle">연대기</a>
+  </nav>
+</header>
+
+<section id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="kicker" id="hero-sub">殘響 · ECHO</p>
+    <h1 id="hero-title">잔향</h1>
+    <p class="tagline" id="hero-tag"></p>
+    <div class="hero-cta">
+      <a class="btn" href="#chronicle">오늘의 기록 읽기</a>
+      <a class="btn ghost" href="#map">세계 지도</a>
+    </div>
+    <p class="latest" id="latest"></p>
+  </div>
+  <div class="scroll-hint">↓</div>
+</section>
+
+<section id="lore" class="sec"><h2 class="sec-h"><span>壹</span>세계</h2><div class="lore" id="lore-list"></div></section>
+
+<section id="map" class="sec">
+  <h2 class="sec-h"><span>貳</span>낙언 이후의 땅</h2>
+  <p class="sec-p">말이 떨어진 자리마다 땅의 모양이 바뀌었다. 지역을 누르면 기록이 열린다.</p>
+  <div class="map-wrap">
+    <div class="map-box"><svg id="worldmap" viewBox="0 0 1000 720" role="img" aria-label="잔향 세계 지도"></svg></div>
+    <aside class="map-info" id="map-info"><p class="muted">지역을 선택하세요.</p></aside>
+  </div>
+  <div class="legend" id="legend"></div>
+</section>
+
+<section id="factions" class="sec"><h2 class="sec-h"><span>參</span>세력</h2><div class="factions" id="faction-list"></div></section>
+
+<section id="characters" class="sec"><h2 class="sec-h"><span>肆</span>인물</h2><div class="cards" id="char-list"></div></section>
+
+<section id="chronicle" class="sec">
+  <h2 class="sec-h"><span>伍</span>연대기</h2>
+  <p class="sec-p">이야기는 매일 한 장씩 자라난다.</p>
+  <div class="chron">
+    <ol class="timeline" id="timeline"></ol>
+    <article class="reader" id="reader"></article>
+  </div>
+</section>
+
+<footer class="foot">「잔향」 오리지널 세계관 · 매일 갱신 · <span id="updated"></span></footer>
+<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('open')"><div class="modal-card" id="modal-card"></div></div>
+<script src="app.js"></script>
+</body>
+</html>
